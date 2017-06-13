@@ -596,7 +596,7 @@ class PollBlock(PollBase):
 class SurveyBlock(PollBase):
     # pylint: disable=too-many-instance-attributes
 
-    display_name = String(default=_('Survey'))
+    display_name = String(default=_('FastTrac Survey'))
     # The display name affects how the block is labeled in the studio,
     # but either way we want it to say 'Poll' by default on the page.
     block_name = String(default=_('Poll'))
