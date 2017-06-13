@@ -82,7 +82,6 @@ function PollUtil(runtime, element, pollType) {
         } else if ($('div.poll-block', element).data('can-vote')) {
             self.enableSubmit();
         }
-        self.transformQuestions();
     };
 
     this.surveyInit = function () {
@@ -105,6 +104,9 @@ function PollUtil(runtime, element, pollType) {
         // If the user has refreshed the page, they may still have an answer
         // selected and the submit button should be enabled.
         self.verifyAll();
+
+        // change question format - FastTrac addition
+        self.transformQuestions();
     };
 
     this.shouldDisplayResults = function () {

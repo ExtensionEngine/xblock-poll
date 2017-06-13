@@ -313,7 +313,7 @@ th.survey-answer {
 /* override top row in table */
 .themed-xblock.poll-block .survey-table thead tr th.survey-answer {
     width: auto;
-    max-width: 1rem;
+    max-width: 3rem;
     text-transform: uppercase;
     color: #8d8d8d;
     font-size: 0.8em;
@@ -341,4 +341,8 @@ th.survey-answer {
 
 .view-results-button-wrapper {
     display: none;
+}
+
+.poll-feedback {
+    padding-top: 3rem;
 }
