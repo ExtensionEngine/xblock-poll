@@ -82,7 +82,6 @@ function PollUtil(runtime, element, pollType) {
         } else if ($('div.poll-block', element).data('can-vote')) {
             self.enableSubmit();
         }
-
         self.transformQuestions();
     };
 
