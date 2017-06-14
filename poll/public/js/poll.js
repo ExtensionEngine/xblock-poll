@@ -2,6 +2,7 @@
 
 function PollUtil(runtime, element, pollType) {
     var self = this;
+    var $element = $(element);
 
     this.init = function () {
         // Initialization function used for both Poll Types
@@ -105,6 +106,7 @@ function PollUtil(runtime, element, pollType) {
         // selected and the submit button should be enabled.
         self.verifyAll();
 
+        self.setWidthForQuestionColumn();
         // change question format - FastTrac addition
         self.transformQuestions();
     };
@@ -244,7 +246,7 @@ function PollUtil(runtime, element, pollType) {
     });
 
     this.transformQuestions = function () {
-        var $question = $('.survey-question p');
+        var $question = $element.find('.survey-question p');
         $question.each(function () {
             var $current_question = $(this);
             var question_text = $current_question.text();
@@ -253,6 +255,21 @@ function PollUtil(runtime, element, pollType) {
             $current_question.parent().append(q_heading).append(q_description);
             $current_question.remove();
         });
+    };
+
+    // depending on the number of columns for answers, we want
+    // question column to expand/shrink so answer headers stay readable. Default is 50%
+    this.setWidthForQuestionColumn = function () {
+        var number_of_answers = self.answers.length;
+        var number_of_questions = $element.find('.survey-question p').length;
+        var number_of_answ_columns = number_of_answers / number_of_questions;
+
+        var $question_column = $('.survey-question');
+        if (number_of_answ_columns < 4) {
+            $question_column.addClass('large-width');
+        } else if (number_of_answ_columns >= 4 && number_of_answ_columns < 7) {
+            $question_column.addClass('middle-width');
+        }
     }
 }
 
