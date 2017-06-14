@@ -226,7 +226,17 @@ th.survey-answer {
     vertical-align: middle;
     padding-top: .15em;
     padding-bottom: .15em;
+    width: 50%; /* small width */
 }
+
+.survey-question.middle-width {
+    width: 60%;
+}
+
+.survey-question.large-width {
+    width: 70%;
+}
+
 
 .survey-choice {
     background-color: #e5ebee;
