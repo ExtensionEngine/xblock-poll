@@ -258,7 +258,7 @@ function PollUtil(runtime, element, pollType) {
     };
 
     // depending on the number of columns for answers, we want
-    // question column to expand/shrink so answer headers stay readable. Default is 50%
+    // question column to expand/shrink so answer headers stay readable. Default is 35%
     this.setWidthForQuestionColumn = function () {
         var number_of_answers = self.answers.length;
         var number_of_questions = $element.find('.survey-question p').length;
