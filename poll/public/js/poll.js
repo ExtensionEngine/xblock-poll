@@ -170,10 +170,13 @@ function PollUtil(runtime, element, pollType) {
             if (!can_vote) {
                 $('input', element).attr('disabled', true)
             }
-            return;
+
+            return window.location.reload();
         }
         // Used if results are not private, to show the user how other students voted.
         self.getResults();
+
+        window.location.reload();
     };
 
     this.getResults = function () {
