@@ -233,7 +233,7 @@ function PollUtil(runtime, element, pollType) {
         // If the submit button doesn't exist, the user has already
         // selected a choice. Render results instead of initializing machinery.
         if (data['voted'] && !data['private_results']) {
-            self.onSubmit({'success': true});
+            self.getResults();
             $('.poll-block-form-wrapper', element).hide();
         }
         else {
